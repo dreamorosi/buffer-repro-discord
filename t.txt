@@ -1,1 +1,1 @@
-{"errorType":"Error","errorMessage":"Simulated error","trace":["Error: Simulated error","    at file:///var/task/index.mjs:2:19946","    at gn (file:///var/task/index.mjs:2:18944)"]}
+null
