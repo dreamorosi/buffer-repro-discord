@@ -36,6 +36,7 @@ jobs:
         uses: dreamorosi/env-test/.github/actions/version-n-changelog@b642daa3f000b7d0b181ef496a0b2130449a8e15
         with:
           nodeVersion: "24"
+          build: false
       - name: Stage changes
         run: git add .
       - name: Set release version
