@@ -35,6 +35,8 @@ jobs:
         run: |
           VERSION=$(cat package.json | jq .version -r)
           echo RELEASE_VERSION="$VERSION" >> "$GITHUB_OUTPUT"
+      - name: Stage changes
+        run: git add .
       - name: Create PR
         id: create-pr
         uses: ./.github/actions/create-pr
