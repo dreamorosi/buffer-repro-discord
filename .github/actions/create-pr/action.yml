@@ -75,7 +75,7 @@ runs:
     - id: create-pr
       working-directory: ${{ env.GITHUB_WORKSPACE }}
       run: |
-        chmod +x create_pr_for_staged_changes.sh
+        chmod +x ./create_pr_for_staged_changes.sh
         create_pr_for_staged_changes.sh "${FILES}"
       env:
         FILES: ${{ inputs.files }}
