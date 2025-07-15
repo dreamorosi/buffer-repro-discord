@@ -6,8 +6,6 @@
   },
   "type": "module",
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
     "test": "vitest",
     "cdk": "cdk",
     "install:parameters": "npm i @aws-lambda-powertools/parameters@latest @aws-sdk/client-ssm @aws-sdk/client-secrets-manager @aws-sdk/client-appconfigdata @aws-sdk/client-dynamodb",
