@@ -29,7 +29,10 @@ jobs:
           cache: "npm"
       - name: Version
         id: bump-version
-        uses: dreamorosi/env-test/.github/actions/version-n-changelog@3e7fc3d62a99f29599a7989b9a3494c680f4cc31
+        uses: dreamorosi/env-test/.github/actions/version-n-changelog@90cc731523404c236d8cbbcf26630b1bf85fdc18
+      - name: Print version
+        run: |
+          echo "new version ${{ steps.bump-version.outputs.new-version }}"
       - name: Stage changes
         run: git add .
       - name: Create PR
