@@ -29,12 +29,7 @@ jobs:
           cache: "npm"
       - name: Version
         id: bump-version
-        uses: dreamorosi/env-test/.github/actions/version-n-changelog@8477bb2c6f2ba3b8e8cc63c4790d4cb63b9dff45
-      - name: Set release version
-        id: set-release-version
-        run: |
-          VERSION=$(cat package.json | jq .version -r)
-          echo RELEASE_VERSION="$VERSION" >> "$GITHUB_OUTPUT"
+        uses: dreamorosi/env-test/.github/actions/version-n-changelog@3e7fc3d62a99f29599a7989b9a3494c680f4cc31
       - name: Stage changes
         run: git add .
       - name: Create PR
@@ -42,6 +37,6 @@ jobs:
         uses: ./.github/actions/create-pr
         with:
           temp_branch_prefix: "ci-bump"
-          pull_request_title: "chore(ci): bump version to ${{ steps.set-release-version.outputs.RELEASE_VERSION }}"
+          pull_request_title: "chore(ci): bump version to ${{ steps.bump-version.outputs.new-version }}"
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
